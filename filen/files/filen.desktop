@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Categories=Network
+Name=Filen
+GenericName=Filen
+Comment=GUI Filen client
+Exec=/usr/bin/Filen_linux_x86_64.AppImage
+Icon=filen.png
+Keywords=filen
+Terminal=false
+StartupNotify=true;
