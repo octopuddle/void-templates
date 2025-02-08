@@ -1,6 +1,6 @@
 # Template file for 'filen'
 pkgname=filen
-version=3.0.41
+version=3.0.44
 revision=1
 archs="x86_64"
 build_style=fetch
@@ -10,7 +10,7 @@ license="AGPL-3.0-or-later"
 homepage="https://github.com/FilenCloudDienste/filen-desktop"
 #changelog=""
 distfiles="${homepage}/releases/download/v${version}/Filen_linux_x86_64.AppImage"
-checksum=35aa39072f19f2531b45ca76320c3ec5a8a21735310a6e92dd2004e457c36699
+checksum=4e8c379a0de9477c519001069d3dbc6f9a553b02481e9b7aba760d39867b3417
 skip_extraction="Filen_linux_x86_64.AppImage"
 nostrip=true
 triggers="update-desktopdb"
