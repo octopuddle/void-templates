@@ -1,28 +1,29 @@
-# Template file for 'filen'
-pkgname=filen
-version=3.0.44
+# Template file for 'Filen'
+pkgname=Filen
+version=3.0.47
 revision=1
 archs="x86_64"
 build_style=fetch
-short_desc="GUI filen client for desktop"
+short_desc="GUI Filen client for desktop"
 maintainer="octopuddle <its_so_fluffy@outlook.com>"
 license="AGPL-3.0-or-later"
 homepage="https://github.com/FilenCloudDienste/filen-desktop"
 #changelog=""
 distfiles="${homepage}/releases/download/v${version}/Filen_linux_x86_64.AppImage"
-checksum=4e8c379a0de9477c519001069d3dbc6f9a553b02481e9b7aba760d39867b3417
+checksum=91e683e4f52392816b1530ae6a9e03be662ae57dd38e7abe9e3b622e0019f56f
 skip_extraction="Filen_linux_x86_64.AppImage"
 nostrip=true
 triggers="update-desktopdb"
 
 do_install() {
-	vmkdir /usr/bin/filen
+	vmkdir /opt/Filen
 	chmod +x Filen_linux_x86_64.AppImage
-	vbin "Filen_linux_x86_64.AppImage"
+#	vbin "Filen_linux_x86_64.AppImage"
+	vinstall Filen_linux_x86_64.AppImage 755 /opt/Filen
 }
 
 post_install() {
-	vinstall $FILESDIR/filen.desktop 644 usr/share/applications
-	vinstall ${FILESDIR}/filen.png 644 usr/share/pixmaps/
+	vinstall $FILESDIR/Filen.desktop 644 usr/share/applications
+	vinstall ${FILESDIR}/Filen.png 644 usr/share/pixmaps/
 	vlicense $FILESDIR/LICENSE
 }
