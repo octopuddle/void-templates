@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Categories=Development
+Name=Github Desktop
+GenericName=Github Client
+Comment=Github Desktop Client 
+Exec=/opt/Github-Desktop/Github-Desktop.AppImage
+Icon=Github-Desktop
+Keywords=github
+Terminal=false
+StartupNotify=false
+Path=
+MimeType=x-scheme-handler/x-github-desktop-dev-auth;

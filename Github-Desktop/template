@@ -1,0 +1,28 @@
+# Template file for 'Github-Desktop'
+pkgname=Github-Desktop
+version=3.4.13
+revision=1
+archs="x86_64"
+build_style=fetch
+short_desc="Github Desktop GUI"
+maintainer="octopuddle <its_so_fluffy@outlook.com>"
+license="AGPL-3.0-or-later"
+homepage="https://github.com/shiftkey/desktop"
+#changelog=""
+distfiles="${homepage}/releases/download/release-${version}-linux1/GitHubDesktop-linux-x86_64-${version}-linux1.AppImage"
+checksum=f36a7105a2f64f057a8762e38847d28fceee7d685732705fbebac74f0ea4d2b6
+skip_extraction="GitHubDesktop-linux-x86_64-${version}-linux1.AppImage"
+nostrip=true
+triggers="update-desktopdb"
+
+do_install() {
+	vmkdir /opt/Github-Desktop
+	chmod +x "GitHubDesktop-linux-x86_64-${version}-linux1.AppImage"
+	vinstall "GitHubDesktop-linux-x86_64-${version}-linux1.AppImage" 755 /opt/Github-Desktop Github-Desktop.Appimage
+}
+
+post_install() {
+	vinstall $FILESDIR/Github-Desktop.desktop 644 usr/share/applications
+	vinstall ${FILESDIR}/Github-Desktop.png 644 usr/share/pixmaps/
+	vlicense $FILESDIR/LICENSE
+}
